@@ -1,0 +1,12 @@
+
+version: '3.7'
+services:
+  demo-mql:
+    image: mysql:8.0
+    container_name: demo-mql
+    ports:
+      - "5344:3306"
+    volumes:
+      - ./db/demo-mql:/data
+    restart: always
+    stop_grace_period: 2m

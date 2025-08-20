@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deploy SQL Database</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f1f8e9, #e3f2fd);
+      padding: 60px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      color: #1565c0;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    label {
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: linear-gradient(to right, #1976d2, #1565c0);
+      color: #fff;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #1565c0, #0d47a1);
+      transform: scale(1.05);
+    }
+
+    .btn-secondary {
+      margin-top: 20px;
+      background-color: #546e7a;
+    }
+
+    .btn-secondary:hover {
+      background-color: #37474f;
+    }
+
+    .buttons {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🛢️ Deploy a SQL Database</h2>
+
+    <form method="POST">
+      <label for="version">Select SQL Database Image:</label>
+      <select name="version" id="version" required>
+        <option value="mysql:8.0.43">MySQL 8.0</option>
+        <option value="postgres:14.18">PostgreSQL 14</option>
+        <option value="mariadb:10.6-ubi">MariaDB 10.6</option>
+      </select>
+
+      <label for="name">Enter Custom Container Name:</label>
+      <input type="text" name="name" id="name" placeholder="e.g. my-sql-db" required>
+
+      <div class="buttons">
+        <button type="submit" class="btn">🚀 Deploy</button>
+        <a class="btn btn-secondary" href="/">🏠 Home</a>
+        <a class="btn btn-secondary" href="/db/sql">SQL DBs</a>
+        <a class="btn btn-secondary" href="/db/sql/list">SQL DB List</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+

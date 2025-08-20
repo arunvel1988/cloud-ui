@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Database Deployment Success</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #e3f2fd;
+      padding: 40px;
+      color: #0d47a1;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 750px;
+      margin: auto;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #1565c0;
+      font-size: 2rem;
+    }
+
+    .info {
+      font-size: 1.1rem;
+      margin-top: 25px;
+      color: #333;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #0d47a1;
+    }
+
+    a.link {
+      color: #0d47a1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.link:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #1976d2;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-right: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0d47a1;
+    }
+
+    .btn-secondary {
+      background-color: #607d8b;
+    }
+
+    .btn-secondary:hover {
+      background-color: #455a64;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🗄️ {{ db_type }} {{ version }} Deployed Successfully!</h2>
+    <div class="info">
+      📦 <strong>Container Name:</strong> <span class="highlight">{{ container }}</span><br><br>
+      🔗 <strong>Port:</strong> <span class="highlight">{{ port }}</span><br><br>
+      💡 <em>You can now connect to your database using your favorite client or via an app.</em>
+    </div>
+
+    <a class="btn" href="/db/sql">⬅ Back to SQL Databases</a>
+    <a class="btn" href="/db/nosql">⬅ Back to NoSQL Databases</a>
+    <a class="btn btn-secondary" href="/">🏠 Home</a>
+  </div>
+</body>
+</html>
+

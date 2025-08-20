@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deploy NoSQL Database</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fff3e0, #e0f7fa);
+      padding: 60px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: #d84315;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      margin-top: 20px;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: linear-gradient(to right, #ff5722, #e64a19);
+      color: #fff;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #e64a19, #bf360c);
+      transform: scale(1.05);
+    }
+
+    .btn-secondary {
+      background-color: #546e7a;
+      margin-top: 20px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #37474f;
+    }
+
+    .actions {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📦 Deploy NoSQL Database</h2>
+    <form method="POST" action="/db/nosql">
+      <label for="version">Select NoSQL Database:</label>
+      <select name="version" id="version" required>
+        <option value="mongo:7">MongoDB 7</option>
+        <option value="redis:8">Redis 8</option>
+        <option value="cassandra:5">Cassandra 5</option>
+      </select>
+
+      <label for="name">Enter Container Name:</label>
+      <input type="text" id="name" name="name" placeholder="e.g. mongo-db" required>
+
+      <div class="actions">
+        <button type="submit" class="btn">🚀 Deploy NoSQL</button><br>
+        <a href="/db/nosql" class="btn btn-secondary">NoSQL</a>
+        <a class="btn btn-secondary" href="/db/nosql/list">NoSQL DB List</a>
+        <a href="/" class="btn btn-secondary">🏠 Home</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+

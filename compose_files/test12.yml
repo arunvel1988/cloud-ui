@@ -1,0 +1,19 @@
+
+version: '3.7'
+services:
+  test12:
+    image: mysql:8.0.43
+    container_name: test12
+    ports:
+      - "7748:3306"
+    volumes:
+      - ./db/test12:/data
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass
+      - MYSQL_DATABASE=testdb
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass123
+
+    restart: always
+    stop_grace_period: 2m
